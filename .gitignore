@@ -1,0 +1,20 @@
+# Runtime output and local editor files
+**/qa-runtime/
+**/运行错误.txt
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Account/session data must never be included
+auth.json
+installation.json
+native-activation.json
+previous-pet-settings.json
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

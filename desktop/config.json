@@ -1,0 +1,20 @@
+{
+  "name": "奶龙 · 三动作",
+  "size": 240,
+  "idle_seconds": 8,
+  "idle_flip_seconds": 4,
+  "laugh_fps": 30,
+  "laugh_frames": 541,
+  "laugh_seconds": 18.033333333333335,
+  "pose_hold_seconds": 1.2,
+  "move_seconds_each_direction": 4.8,
+  "move_pixels_per_second": 65,
+  "beat_seconds": 0.48,
+  "sound_enabled": false,
+  "auto_sequence": [
+    "idle",
+    "laugh",
+    "idle",
+    "stance"
+  ]
+}
