@@ -93,3 +93,23 @@ powershell.exe -NoProfile -STA -ExecutionPolicy Bypass -File .\desktop\desktop-p
 ```
 
 检查结果写入 `desktop/qa-runtime/`，该目录已由 Git 忽略。
+
+### 修复与重新提取大笑素材
+
+独立桌面版已修复浅色腹部被误当作白底删除的问题。提取工具按连通背景处理透明度，保留暖色浅肤色，并检查所有帧的身体像素保留率与画布边界。播放时间仍为 541 帧、30 帧/秒。
+
+开发时如需从原始视频重新提取素材，可安装 `av`、`numpy`、`pillow`，然后运行：
+
+```powershell
+python tools/extract_laugh_frames.py original.mp4 --output desktop/assets/laugh --report extraction-report.json
+```
+
+这里的 `original.mp4` 指用户提供的原始大笑视频；工具需要相同内容和构图。它只用于制作素材，桌宠运行时不依赖 Python。生成报告不包含本机路径或账号信息。
+
+素材回归检查（只需 Pillow）会检查完整帧序列、画布裁切，以及抱头和倒地时曾经缺失的腹部位置：
+
+```powershell
+python tests/check_desktop_assets.py
+```
+
+[查看修复后的大笑关键帧](previews/desktop-repaired-contact.jpg)
